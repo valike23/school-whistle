@@ -1,0 +1,75 @@
+<div ng-controller='newsCtrl'>
+
+	<div class='container-fluid w3-teal'>
+		<h3>Create News</h3>
+	</div>
+	<div class='container'>
+	<div class='w3-container'>
+		<form role='form'>
+	<br/>
+	<label>Title</label>
+			
+			<input type='text' class='w3-input w3-bordered-0 w3-animate-input' style='width:30%' placeholder='Write news title here' ng-model='title'/>
+	<br/>	
+			<label >Content</label>
+			<textarea type='text' class='w3-input w3-bordered-0 w3-animate-input' style='width:50%; height:300px' placeholder='Write news here' ng-model='content' row='5'></textarea>
+           <br/>
+             <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-default btn-sm" title="new-line(create new paragraph)" ng-click="newLine()"><span class='fa fa-align-justify'></span></button>
+                <button type="button" class="btn btn-default btn-sm" title="quote text begin" data-toggle="modal" data-target="#myModal" ng-click={{test = 'quote'}}><span class='fa fa-external-link' ></span></button>
+                <button type="button" class="btn btn-default btn-sm" title="quote text ends"ng-click="endtQuote()"><span class='fa fa-external-link-square'></span></button>
+            </div>
+            
+            <br/>
+			<label >News Image</label>
+			<input class="btn btn-default btn-file" type='file' id='files'/>
+			<br/>
+			<button class='btn btn-warning' ng-click='showImage()'>preview</button>
+			<br/>
+			<img id='image'style='width:20%;height:20%'/>
+			<br/>
+			<label>News Type</label>
+			<br/>
+			<input class='w3-radio' type='radio' name='type' value='Exams'/>
+			<label>Exams</label>
+			<input class='w3-radio' type='radio' name='type' value='School'/>
+			<label>School</label>
+			<input class='w3-radio' type='radio' name='type' value='JAMB'/>
+			<label>JAMB</label>
+			<br/>
+				<button class='btn btn-success btn-lg' ng-click='submit()'>submit</button>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+		
+	</form>
+       
+	</div>
+	</div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" ng-click="opt()">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

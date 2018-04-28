@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="w3-container">
+        <div class="w3-display-container w3-card-2 " style="max-width:1040px;">
+
+            <img src="http://localhost:30/lib/images/Snowflake.jpg" width="1040" height="300" />
+            <div class="w3-display-topright btn w3-border-0 btn-default " style=" padding: 1px" title="configure this page"><span class="fa-2x pe-7s-config"></span></div>
+            <div class="w3-display-bottomleft">
+                <img src="http://localhost:30/lib/images/profile.jpg" width="100" height="100" style="border:solid white; margin-bottom:6px; margin-right:4px; margin-left: 6px" class="w3-circle" />
+                <span class="h3">{{user.firstname + ' ' + user.lastname}}</span>
+            </div>
+
+        </div>
+        <br />
+       <blockquote class="blockquote-reverse w3-text-light-blue" style="max-width:1040px;">
+           <p class="lead">{{user.about_me}}</p>
+           <footer>{{user.firstname + ' ' + user.lastname}}</footer>
+       </blockquote>
+    </div>
+</div>

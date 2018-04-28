@@ -1,0 +1,52 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            <div class="" style="background-image:url({{courses[0].image}})">
+                <div style="height:300px"></div>
+
+            </div>
+            <div><p class="h3 w3-border-bottom" >{{courses[0].course}}</p></div>
+            <br/>
+            <div><b>About this Course</b></div>
+            <div id="about" class="w3-sepia justify-content-around"></div>
+            
+        </div>
+        
+       
+        <div class="col-sm-3">
+            <div class="ads">
+                <br />
+                <br />
+                <br />
+                <div class="w3-panel w3-green w3-center w3-round-xlarge" style="opacity:0.9">
+                    <h4>ads goes here</h4>
+                    <p class="w3-opacity-off lead" style="color:white; opacity:initial">call: 08175420053</p>
+                </div>
+            </div>
+            <br />
+            <div class='row'>
+                <div class="col-xs-12">
+                    <table class="table table-striped table-hover table-condensed">
+                        <tbody>
+                            <tr><td><b>school: </b></td> <td>JAMB</td></tr>
+                            <tr><td><b>length: </b></td> <td>{{courses[0].length + ' days'}} </td></tr>
+                            <tr><td><b>subject: </b></td> <td>Mathematics</td></tr>
+                        </tbody>
+
+                    </table>
+                    <div class="w3-grey" style="padding-left:8px">
+                        <p class="lead">prerequisites</p>
+                        <p>{{courses[0].prerequisites}}</p>
+                    </div>
+                    <br/>
+                    <a class="w3-button btn-block w3-teal w3-hover-green w3-round-xlarge" ui-sref="content.course" >
+                        <p><b>start course now</b></p>
+                        <p style="padding-right:4px;">Ensure you are logged in...</p>
+                    </a>
+                </div>
+                
+                </div>
+
+            </div>
+        </div>
+</div>

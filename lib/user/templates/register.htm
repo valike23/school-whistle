@@ -1,0 +1,65 @@
+<div class='container' ng-controller='regCtrl'>
+	<h1 class='well'> Registration form </h1>
+	<div class='col-md-12 well'>
+		<div class='row'>
+			<form>
+				<div class='col-sm-12'>
+					<div class='row'>
+						<div class='col-sm-6 form-group'>
+							<label> First Name </label>
+							<input type='text' placeholder='enter first name here...' class='form-control' ng-model='firstName'>
+						</div>
+						<div class='col-sm-6 form-group'>
+							<label> Last Name </label>
+							<input type='text' placeholder='enter last name here...' ng-model='lastName' class='form-control'>
+						</div>
+					</div>
+					<div class='form-group'>
+						<label> Address </label>
+						<textarea placeholder='Enter address here...'  class='form-control' rows='3'></textarea>
+					</div>
+					<div class='row'>
+						<div class='col-sm-4 form-group'>
+							<label> City </label>
+							<input type='text' placeholder='enter City here...' class='form-control'>
+						</div>
+						<div class='col-sm-4 form-group'>
+							<label> State </label>
+							<input type='text' placeholder='enter State here...' class='form-control'>
+						</div>
+						<div class='col-sm-4 form-group'>
+							<label> Zip </label>
+							<input type='text' placeholder='enter Zip code here...' class='form-control'>
+						</div>
+					</div>
+					<div class='row'>
+						<div class='col-sm-6 form-group'>
+							<label> Title </label>
+							<input type='text' placeholder='enter title here...' class='form-control'>
+						</div>
+						<div class='col-sm-6 form-group'>
+							<label> Username </label>
+							<input type='text' placeholder='enter username here...' ng-model='userName' class='form-control'>
+						</div>
+					</div>
+					<div class='form-group'>
+						<label> Phone Number </label>
+						<input type='number' placeholder='Enter phone number here...' ng-model='phone'  class='form-control' ></input>
+					</div>
+					<div class='form-group'>
+						<label> Email Address </label>
+						<input type='text' placeholder='Enter Email address here...' ng-model='email' class='form-control' ></input>
+					</div>
+					<div class='form-group'>
+						<label> password </label>
+						<input type='password' placeholder='Enter password here...' ng-model='password'  class='form-control' ></input>
+					</div>
+					<button class='btn btn-lg btn-info' ng-click='submit()'> Submit </button>
+				</div>
+			</form>
+			
+		</div>
+	</div>
+</div>
+<br/>
+<br/>

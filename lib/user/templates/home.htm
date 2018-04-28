@@ -1,0 +1,120 @@
+<div  class='container' ng-controller='homeCtrl'>
+			<div class='row'>
+				<div class='col-md-5'>
+					<div class='row'>
+						<div class='col-xs-12 w3-center' ng-click='currentNews(snews)'>
+							<img ng-src={{snews.image}} class='img-rounded img-responsive 'style='width:380px;height:280px'/>
+							<br/>
+							<p class='w3-xlarge'>{{snews.title}}</p>
+						</div>
+					</div>
+					<br/>
+					<div class='row'>
+						<div class='col-xs-3 w3-btn' ng-click='currentNews(newsone)'>
+						
+									<img class='img-rounded ' ng-src={{newsone.image}} style='width:50px;height:50px'>
+							
+								<p>{{newsone.title}}</p>
+					
+							
+						</div>
+						<div class='col-xs-3 w3-btn' ng-click='currentNews(newstwo)'>
+					
+								<img class='img-rounded' ng-src={{newstwo.image}} style='width:50px;height:50px'>
+								
+								
+								<p>{{newstwo.title}}</p>
+							
+						</div>
+						<div class='col-xs-3 w3-btn' ng-click='currentNews(newsthree)'>
+						
+								<img class=' img-rounded' ng-src={{newsthree.image}} style='width:50px;height:50px'>
+								
+								
+								<p>{{newsthree.title}}</p>
+							
+						</div>
+					</div>
+				</div>
+				<div class='col-md-4 '>
+				<p class='row w3-dark-grey w3-card-2'>
+				Trending news
+				</p>
+				<div class='row w3-card-2'>
+				<ul class='  w3-ul'>
+					<li class='w3-bar col-xs-12 w3-border-bottom ' ng-repeat='mynews in trending' >
+					<div class='row w3-button' ng-click='currentNews(mynews)'>
+						<div class='col-xs-3 bar-item'>
+							<img ng-src={{mynews.image}} class='img-responsive img-circle' />
+				</div>
+						<div class='col-xs-9 bar-item'>
+							<p class='w3-small'><b>{{mynews.title}}</b></p>
+							</div>
+						</div>
+						
+						</li>
+				</ul>	
+				</div>
+					
+					
+				
+				<div class='col-md-3'>
+				</div>
+			</div>
+                <br/>
+                <br/>
+                <br/>
+			
+			<div class='row'>
+				<div class='col-sm-4 '>
+
+					<div class='well well-sm w3-card-2'style='background-color:red' >
+						<div class='row'>
+							<div class='col-xs-4'>
+								<i class='fa fa-university fa-5x' style='width:100%'>
+									<a href='./cbt'></a>
+								</i>
+							</div>
+
+							<div class='col-xs-8 '>
+								<p class='h4 w3-small'>Pratice CBT Past Questions </p>
+							</div>
+						</div>
+
+					</div>
+
+
+				</div>
+                
+				<div class='col-sm-4'>
+					<div class='well well-sm w3-card-2'style='background-color:lightBlue'>
+						<div class='row'>
+							<div class='col-xs-4'>
+								<i class='fa fa-graduation-cap fa-5x' style='width:100%'></i>
+							</div>
+							<div class='col-xs-8'>
+								<p class='h4 w3-small'>Get to know schools that offer your course</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class='col-sm-4'>
+					<div class='well well-sm w3-card-2'style='background-color:lightGreen'>
+						<div class='row'>
+							<div class='col-xs-4'>
+								<i class='fa fa-book fa-5x' style='width:100%'></i>
+							</div>
+							<div class='col-xs-8'>
+								<p class='h4 w3-small'>Node-Academy </p><i> <button class="w3-button w3-teal" ng-click="tutorial()">click me</button></i>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			
+		</div>
+		
+		
+		</div>
+		<br/>
+		<br/>

@@ -1,0 +1,29 @@
+﻿<br />
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for news" ng-model="news_item">
+                <span class="input-group-btn">
+                    <button class="btn w3-green" type="button" ng-click="search()"><span class="pe-7s-search"></span></button>
+                </span>
+            </div>
+
+        </div>
+    </div>
+    <div class="w3-card panel w3-margin " ng-repeat="result in search_results">
+        
+            <div class="panel-body w3-button btn-block" >
+                <p class="pull-left lead ">{{result.title}}</p>
+                <span class="pull-right"><small>views: {{result.views}}</small></span>
+            </div>
+            
+           
+        
+        
+
+    </div>
+   
+</div>
+<br/>
+<br/>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta name='viewport' content='width=device-width, intial-scale=1, shrink-to-fit=no'>
+<meta http-equiv='x-ua-compatible' content='ie = edge'>
+<link rel='stylesheet' href='./lib/assets/css/bootstrap.min.css'>
+<link rel='stylesheet' href='./lib/css/w3.css'>
+
+</head>
+<body ng-app='accounts'>
+
+<nav class='navbar  navbar-inverse '>
+<div class='container-fluid'>
+<div class='navbar-header'>
+<a class='navbar-brand' href='./'>school-node</a>
+</div>
+<ul class='nav navbar-nav'>
+<li class='nav-item active'>
+<a class='nav-link' href='./'>Home</a>
+</li>
+<li class='nav-item'>
+<a class='nav-link' href='./news'>News</a>
+</li>
+<li class='nav-item'>
+<a class='nav-link' href='./cbt'>CBT test</a>
+</li>
+</ul>
+<ul class='nav navbar-nav navbar-right'>
+<li class='nav-item'>
+<a class='nav-link' href='./Register'>Register</a>
+</li>
+<li class='nav-item'>
+<a class='nav-link' href='./Login'>Login</a>
+</li>
+</ul>
+</div>
+</nav>
+
+	<div ng-controller='loginCtrl' class='container'>
+		<br/>
+		<br/>
+		<br/>
+		<div class='center-block panel panel-default w3-card' style='width:50%; height:50%'>
+			<div class='panel-heading text-center'>
+				<p><strong>Login</strong></p>
+			</div>
+			<div class='panel-body'>
+				<form role='form' class='form-inline'style=''>
+					<div class='form-group'>
+						<label for='user'>Username</label>
+						<input class='form-control' id='user' ng-model='username' type='text'/>
+					</div>
+					<br/>
+					<br/>
+					<div class='form-group'>
+						<label for='pwd'>Password </label>
+						<input class='form-control' id='pwd' type='password' ng-model='password'/>
+					</div>
+			
+			</form>
+			<br/>
+			<button class='btn btn-link'>forgot Password?	</button>
+			</div>
+			<div class='panel-footer'>
+				<button class='btn btn-success' ng-click='submit()'>Submit</button>
+			</div>
+		</div>
+	</div>
+<br/>
+<br/>
+
+<footer style="color:red" class='nav navbar navbar-inverse navbar-fixed-bottom ' >
+<div class='container'>
+<div class='row'>
+<div class='col-md-4'>
+<p> <strong> Author:</strong>Valentine Emmanuel </p>
+
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+
+<script src='./lib/assets/js/jquery-1.10.2.js'></script>
+<script src='./lib/js/angular.min.js'></script>
+<script src='./lib/assets/js/bootstrap.min.js'></script>
+<script src='./lib/user/js/accounts.js'></script>
+<script src='./lib/user/js/factory.js'></script>
+</body>
+</html>

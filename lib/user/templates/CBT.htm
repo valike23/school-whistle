@@ -1,0 +1,36 @@
+<div class='container center' ng-controller='cbtCtrl'>
+<div class='row'>
+<div class='btn-group well well-sm' >
+<button class='btn btn-sm btn-warning'ng-click='set(question)'ng-repeat='question in questions'>{{question.id}}</p>
+</div>
+
+</div>
+<div class='well well-lg container'
+<div class='row'>
+<div class='col-xs-12 '>
+<p>{{data.subject}}</p>
+</div>
+
+<div class='row'>
+<div class='col-xs-12'>
+<p class='text-capitalize'>{{data.quiz}}</p>
+</div>
+</div>
+<div class='row '>
+<div class='col-xs-6 ' ng-repeat='option in data.options'>
+<p class='well well-sm well-rounded' ng-click='fix(option)' style='background-color:{{option.color}} ; 
+color:'white'''>{{option.name}}</p>
+</div>
+</div>
+</div>
+<br/>
+<br/>
+<button class='btn btn-lg btn-success' ng-click='submit()'>submit</button>
+
+</div>
+
+
+
+<br/>
+<br/>
+<br/>

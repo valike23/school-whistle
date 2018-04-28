@@ -1,0 +1,30 @@
+{
+  "name": "school-node",
+  "version": "1.0.0",
+  "description": "A one place stop for all your school solution- From  school news to exam pakages to CBT test and exam preparation classes.",
+  "main": "startup.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "news",
+    "CBT",
+    "school",
+    "exam",
+    "admissions"
+  ],
+  "author": "Valentine Emmanuel",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "jsonwebtoken": "^8.1.0",
+    "mysql": "^2.15.0",
+    "nodemon": "^1.13.3"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {}
+}

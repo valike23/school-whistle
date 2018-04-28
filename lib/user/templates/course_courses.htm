@@ -1,0 +1,26 @@
+﻿<div class="container">
+    <div class="row" style="margin-bottom:15px">
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="col-xs-7 lead">viewing all courses</div>
+                <div class="col-xs-5">
+                    <div class="input-group">
+
+                        <input type="text" class="form-control w3-input" placeholder="Search for courses" style="min-width:120px">
+                        <span class="input-group-btn">
+                            <button class="btn w3-green" type="button"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <ui-view class="col-sm-9"></ui-view>
+        <div class="col-sm-3" ng-repeat="course in courses">
+            {{course.course}}
+            <img ng-src={{course.image}}  style="width:500px"/>
+            
+        </div>
+    </div>
+</div>

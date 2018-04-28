@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta name='viewport' content='width=device-width, intial-scale=1, shrink-to-fit=no'>
+		<meta http-equiv='x-ua-compatible' content='ie = edge'>
+		<link rel='stylesheet' href='./lib/assets/css/bootstrap.min.css'>
+		<link rel='stylesheet' href='./lib/css/w3.css'>
+		<link rel='stylesheet' href='./lib/assets/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.css'>
+		<title>news page</title>
+	</head>
+	<body ng-app='newsPage'>
+
+			<nav class='navbar  navbar-inverse ' ng-controller='navCtrl'>
+			<div class='container-fluid'>
+				<div class='navbar-header'>
+					<a class='navbar-brand' href='./'>school-node</a>
+				</div>
+				<ul class='nav navbar-nav'>
+					<li class='nav-item active'>
+						<a class='nav-link' href='./'>Home</a>
+					</li>
+					<li class='nav-item'>
+						<a class='nav-link' href='./news'>News</a>
+					</li>
+					<li class='nav-item'>
+						<a class='nav-link' href='./cbt'>CBT test</a>
+					</li>
+				</ul>
+				<ul class='nav navbar-nav navbar-right' id='notlogged'>
+					<li class='nav-item' >
+						<a class='nav-link' href='./Register'>Register</a>
+					</li>
+					<li class='nav-item'>
+						<a class='nav-link' href='http://localhost:30/#/Login'>Login</a>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right" id='logged'>
+                  
+                        <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <p>
+										Hi {{user.firstname}} !
+										<b class="caret"></b>
+									</p>
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something</a></li>
+                                <li class="divider"></li>
+                                <li><a  ng-click='signout()'>Log out</a></li>
+                              </ul>
+                        </li>
+                       
+						<li class="separator hidden-lg hidden-md"></li>
+                    </ul>
+			</div>
+		</nav>
+			<div class='container' ng-controller='myCtrl'>
+				<div class='row'>
+					<div class='col-xs-12'>
+						<h2><strong>{{news.title}}</strong></h2>
+						<hr/>
+						<p><strong>Published:</strong> the date of publishing</p>
+						<div class='btn-group'>
+							<button class='w3-blue btn'><i class='fa fa-facebook w3-circle'> share</i> </button>
+							<button class='w3-lightblue btn'><i class='fa fa-twitter'> tweet</i></button>
+							<button class='btn-success btn'><i class='fa fa-instagram'> snap it</i></button>
+							<button class='w3-red btn'><i class='fa fa-pinterest'> pin it</i></button>
+						</div>
+					</div>
+				</div>
+				<br/>
+				<div class='row'>
+					<div class='col-md-9'>
+						<img ng-src={{news.image}} class='img-responsive rounded' width="700" height="200" />
+						<br/>
+						<p><strong><i>Valentine Emmanuel</i></strong></p>
+						<br/>
+						<p ng-repeat = 'cont in content' style="text-align: justify;">
+						{{cont}}
+						</p>
+						<br/>
+                        <div id="newsBody"></div>
+						<p><strong>Contact us:</strong> 08175420053 </p>
+						<br/>
+						<br/>
+						
+					</div>
+                    <div class='col-md-3'>
+                        <p class='row w3-dark-grey w3-card-2' style="margin-left:-10px">
+                            Related news
+                        </p>
+                        <div class='row w3-card-2' style="margin-left:-10px">
+                            <ul class='  w3-ul'>
+                                <li class='w3-bar col-xs-12 w3-border-bottom ' ng-repeat='mnews in related'>
+                                    <div class='row w3-button' ng-click='currentNews(mnews)'>
+                                        <div class='col-xs-3 bar-item'>
+                                            <img ng-src={{mnews.image}} class='img-responsive img-circle' />
+                                        </div>
+                                        <div class='col-xs-9 bar-item'>
+                                            <p class='w3-small'><b>{{mnews.title}}</b></p>
+                                        </div>
+                                    </div>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+				</div>
+                <br/>
+                <div class="row">
+                   
+                    <div class='row'>
+                        <div class="col-sm-9">
+                            <div class='row'>
+                                <div class='col-sm-3 col-xs-4'>
+                                    <strong>	{{comments.length}} comments</strong>
+                                </div>
+                                <div class='col-sm-7 col-xs-4'>
+                                    <strong>		School node</strong>
+                                </div>
+                                <div class='col-sm-2 btn col-xs-4 '>
+                                    <strong>	Login</strong>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class='row'>
+                                <div class='col-sm-1 col-xs-2'>
+                                    <i class='fa fa-user fa-3x' style='width:100%'></i>
+                                </div>
+                                <div class='col-sm-11 col-xs-10'>
+                                    <input type='text' class='w3-input w3-border w3-round' ng-model="comment" placeholder='write comments here' />
+                                    <br />
+                                    <button class='btn btn-primary pull-right' ng-click='sendComment()'>post</button>
+                                </div>
+
+                            </div>
+                            <br />
+                            <br />
+                            <div class='row w3-card-2 well well-sm' ng-repeat="comment in comments">
+                                <div>
+                                    <span class='text-primary' style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"><a href="#">{{comment.username}}</a></span>
+                                    <span class='pull-right'>{{comment.DOP| date :'short'}}</span>
+                                </div>
+                                <p style='text-align:justify' class='well well-lg'>{{comment.comment}}</p>
+                                <div class='text-primary' style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
+                                    <a ng-click="likes(comment)" class="btn btn-link"><i class='fa fa-thumbs-o-up'></i><sup class='badge badge-info'>{{' ' + comment.likes}}</sup>likes </a>
+                                    <a ng-click="dislikes(comment)" class="btn btn-link"><i class='fa fa-thumbs-o-down'></i><sup class='badge badge-info'>{{' ' + comment.dislikes}}</sup> dislikes</a>
+                                    <span class="pull-right" ng-show="{{comment.username == user.username}}">
+                                        <a class="btn btn-link" data-toggle="modal" data-target="#myModal">edit</a>
+                                        <a class="btn btn-link" ng-click="delete(comment)">delete</a>
+                                    </span>
+                                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close " data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel" {{test = false}}>Edit comment</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <textarea rows="3" role="article" class="w3-input w3-border-0 " placeholder="input comment here" ng-model="editted"></textarea>
+                                                    <div class="alert alert-success" ng-show="test" role="alert"><lead>comment editted successfully!!!</lead> you may dismiss modal now. <button type="button" class="close " data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary" ng-click="edit(comment.id)">Save changes</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <br />
+                            <br />
+                            <br />
+                        </div>
+                       
+                </div>
+            </div>
+       </div>
+			<footer style="color:red" class='nav navbar navbar-inverse navbar-fixed-bottom ' >
+				<div class='container'>
+					<div class='row'>
+						<div class='col-md-4'>
+							<p> <strong> Author:</strong>Valentine Emmanuel </p>
+
+						</div>
+					</div>
+				</div>
+			
+			</footer>
+
+
+			<script src='./lib/assets/js/jquery-1.10.2.js'></script>
+			<script src='./lib/js/angular.js'></script>
+			<script src='./lib/user/js/factory.js'></script>
+			<script src='./lib/assets/js/bootstrap.min.js'></script>
+			<script src='./lib/user/js/news.js'></script>
+	</body>
+</html>

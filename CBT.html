@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta name='viewport' content='width=device-width, intial-scale=1, shrink-to-fit=no'>
+<meta http-equiv='x-ua-compatible' content='ie = edge'>
+<link rel='stylesheet' href='./lib/assets/css/bootstrap.min.css'>
+
+</head>
+<body ng-app='myApp'>
+
+<nav class='navbar  navbar-inverse ' ng-controller='navCtrl'>
+			<div class='container-fluid'>
+				<div class='navbar-header'>
+					<a class='navbar-brand' href='./'>school-node</a>
+				</div>
+				<ul class='nav navbar-nav'>
+					<li class='nav-item active'>
+						<a class='nav-link' href='./'>Home</a>
+					</li>
+					<li class='nav-item'>
+						<a class='nav-link' href='./news'>News</a>
+					</li>
+					<li class='nav-item'>
+						<a class='nav-link' href='./cbt'>CBT test</a>
+					</li>
+				</ul>
+				<ul class='nav navbar-nav navbar-right' id='notlogged'>
+					<li class='nav-item' >
+						<a class='nav-link' href='./Register'>Register</a>
+					</li>
+					<li class='nav-item'>
+						<a class='nav-link' href='./Login'>Login</a>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right" id='logged'>
+                  
+                        <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <p>
+										Hi {{user.firstname}} !
+										<b class="caret"></b>
+									</p>
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something</a></li>
+                                <li class="divider"></li>
+                                <li><a  ng-click='signout()'>Log out</a></li>
+                              </ul>
+                        </li>
+                       
+						<li class="separator hidden-lg hidden-md"></li>
+                    </ul>
+			</div>
+		</nav>
+<div class='container center' ng-controller='cbt'>
+<div class='row'>
+<div class='btn-group well well-sm' >
+<button class='btn btn-sm btn-warning'ng-click='set(question)'ng-repeat='question in questions'>{{question.no}}</p>
+</div>
+
+</div>
+<div class='well well-lg container'
+<div class='row'>
+<div class='col-xs-12 '>
+<p>{{data.subject}}</p>
+</div>
+
+<div class='row'>
+<div class='col-xs-12'>
+<p class='text-capitalize'>{{data.question}}</p>
+</div>
+</div>
+<div class='row '>
+<div class='col-xs-6 ' ng-repeat='option in data.options'>
+<p class='well well-sm well-rounded' ng-click='fix(option)' style='background-color:{{option.color}} ; 
+color:'white'''>{{option.name}}</p>
+</div>
+</div>
+</div>
+<br/>
+<br/>
+<button class='btn btn-lg btn-success' ng-click='submit()'>submit</button>
+
+</div>
+
+
+
+<br/>
+<br/>
+<br/>
+<footer style="color:red" class='nav navbar navbar-inverse navbar-fixed-bottom ' >
+<div class='container'>
+<div class='row'>
+<div class='col-md-4'>
+<p> <strong> Author:</strong>Valentine Emmanuel </p>
+
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+
+<script src='./lib/assets/js/jquery-1.10.2.js'></script>
+<script src='./lib/js/angular.min.js'></script>
+<script src='./lib/assets/js/bootstrap.min.js'></script>
+<script src='./lib/user/js/CBT.js'></script>
+</script>
+</body>
+</html>

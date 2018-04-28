@@ -1,0 +1,64 @@
+<div class="wrapper">
+    <div class="sidebar" data-color="purple">
+
+    <!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->
+
+
+    	<div class="sidebar-wrapper">
+            <div class="logo">
+                <a href="http://www.creative-tim.com" class="simple-text">
+                    Creative Tim
+                </a>
+            </div>
+
+            <ul class="nav">
+                <li>
+                    <a ui-sref='user.page'>
+                        <i class="pe-7s-graph"></i>
+                        <p>User Page</p>
+                    </a>
+                </li>
+                <li class="active">
+                    <a ui-sref='user.profile'>
+                        <i class="pe-7s-user"></i>
+                        <p>Edit Profile</p>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref ="user.message.read">
+                        <i class="pe-7s-mail"></i>
+                        <p>Messages</p>
+                    </a>
+                </li>
+                <li>
+                    <a ui-sref ="user.friends">
+                        <i class="pe-7s-users"></i>
+                        <p>Friends</p>
+                    </a>
+                </li>
+             
+                <li>
+                    <a href="notifications.html">
+                        <i class="pe-7s-bell"></i>
+                        <p>Notifications</p>
+                    </a>
+                </li>
+			
+            </ul>
+    	</div>
+    </div>
+
+    <ui-view class="main-panel" >
+
+
+    </ui-view>
+    <footer class=" nav navbar navbar-fixed-bottom w3-red w3-hide-large w3-hide-medium">
+        <div class="row">
+            <div class="col-xs-3 w3-button"><i class="fa-2x pe-7s-user"></i></div>
+            <div class="col-xs-3 w3-button"><i class="fa-2x pe-7s-users"></i></div>
+            <div class="col-xs-3 w3-button"><i class="fa-2x pe-7s-mail"></i></div>
+            <div class="col-xs-3 w3-button"><i class="fa-2x pe-7s-bell"></i></div>
+        </div>
+    </footer>
+</div>
+<br/>

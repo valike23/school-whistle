@@ -1,0 +1,45 @@
+<div ng-controller='allCtrl ' class='container-fluid'>
+    <div class="row">
+        <div class="col-sm-12 ">
+            <div class="input-group">
+                <input type="text" class="form-control w3-input "   placeholder="Search news" ng-model="test">
+                <span class="input-group-btn">
+                    <button class="btn btn-success " type="button"><i class="fa fa-search "></i></button>
+                </span>
+            </div><!-- /input-group -->
+        </div>
+    </div>
+    <div class='row' >
+        <div class='col-sm-6' ng-repeat='wrd in news | filter: test' >
+            <div class='well well-sm w3-card'>
+                <div class='row'  style="margin-bottom: -11px">
+                    <div class='col-sm-3' style="margin-left: -25px">
+                        <div class='row'>
+                            <div class='col-sm-12' style="margin-right:5px">
+                                <img src={{wrd.image}} alt='for Godsake' class='w3-circle img-responsive well-image' style='max-width:120px; max-height: 120px' />
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class='col-sm-9'>
+                        <h5>{{wrd.title}}</h5>
+                        <p><strong>likes:</strong>{{wrd.likes}} likes</p>
+                        <p><strong>dislikes:</strong>{{wrd.dislikes}} dislikes</p>
+                        <p><strong>views: </strong> {{wrd.views}} views</p>
+                        <div class='row'>
+                            <div class='col-xs-6'>
+                                <button class='btn btn-warning btn-sm'><i class=' fa-2x fa fa-edit'></i> </button>
+                            </div>
+                            <div class='col-xs-6'>
+                                <button class='btn btn-danger btn-sm' ng-click='remove(wrd)'> <i class=' fa-2x fa fa-remove'></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
