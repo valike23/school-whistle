@@ -1,60 +1,86 @@
 <div ng-controller='newsCtrl'>
 
-	<div class='container-fluid w3-teal'>
-		<h3>Create News</h3>
-	</div>
-	<div class='container'>
-	<div class='w3-container'>
-		<form role='form'>
-	<br/>
-	<label>Title</label>
-			
-			<input type='text' class='w3-input w3-bordered-0 w3-animate-input' style='width:30%' placeholder='Write news title here' ng-model='title'/>
-	<br/>	
-			<label >Content</label>
-			<textarea type='text' class='w3-input w3-bordered-0 w3-animate-input' style='width:50%; height:300px' placeholder='Write news here' ng-model='content' row='5'></textarea>
-           <br/>
-             <div class="btn-group" role="group" aria-label="...">
-                <button type="button" class="btn btn-default btn-sm" title="new-line(create new paragraph)" ng-click="newLine()"><span class='fa fa-align-justify'></span></button>
-                <button type="button" class="btn btn-default btn-sm" title="quote text begin" data-toggle="modal" data-target="#myModal" ng-click={{test = 'quote'}}><span class='fa fa-external-link' ></span></button>
-                <button type="button" class="btn btn-default btn-sm" title="quote text ends"ng-click="endtQuote()"><span class='fa fa-external-link-square'></span></button>
-            </div>
-            
-            <br/>
-			<label >News Image</label>
-			<input class="btn btn-default btn-file" type='file' id='files'/>
-			<br/>
-			<button class='btn btn-warning' ng-click='showImage()'>preview</button>
-			<br/>
-			<img id='image'style='width:20%;height:20%'/>
-			<br/>
-			<label>News Type</label>
-			<br/>
-			<input class='w3-radio' type='radio' name='type' value='Exams'/>
-			<label>Exams</label>
-			<input class='w3-radio' type='radio' name='type' value='School'/>
-			<label>School</label>
-			<input class='w3-radio' type='radio' name='type' value='JAMB'/>
-			<label>JAMB</label>
-			<br/>
-				<button class='btn btn-success btn-lg' ng-click='submit()'>submit</button>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-		
-	</form>
-       
-	</div>
-	</div>
+    <div class='container-fluid w3-teal'>
+        <h3>Create News</h3>
+    </div>
+    <div class='container'>
+        <div class='w3-container'>
+            <form role='form'>
+                <br />
+                <label>Title</label>
+
+                <input type='text' class='w3-input w3-bordered-0 w3-animate-input' style='width:30%' placeholder='Write news title here' ng-model='title' />
+                <br />
+                <label>summary</label>
+
+                <input type='text' class='w3-input w3-bordered-0 w3-animate-input' style='width:30%' placeholder='Write a brief summary of the news not more than 200' ng-model='summary' maxlength="200"/>
+                <br />
+                <label>Content</label>
+                <textarea type='text' class='w3-input w3-bordered-0 w3-animate-input' style='width:50%; height:300px' placeholder='Write news here' ng-model='content' row='5'></textarea>
+                <br />
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-default btn-sm" title="new-line(create new paragraph)" ng-click="newLine()"><span class='fa fa-align-justify'></span></button>
+                    <button type="button" class="btn btn-default btn-sm" title="quote text begin" data-toggle="modal" data-target="#myModal" ng-click={{test = 'quote'}}><span class='fa fa-external-link'></span></button>
+                    <button type="button" class="btn btn-default btn-sm" title="quote text ends" ng-click="endtQuote()"><span class='fa fa-external-link-square'></span></button>
+                </div>
+
+                <br />
+                <label>News Image</label>
+                <input class="btn btn-default btn-file" type='file' id='files' />
+                <br />
+                <button class='btn btn-warning' ng-click='showImage()'>preview</button>
+                <br />
+                <img id='image' style='width:20%;height:20%' />
+                <br />
+                <label>News Category</label>
+                <br />
+                <input class='w3-radio' type='radio' name='type' ng-focus="category(1)" />
+                <label>Admissions</label>
+                <input class='w3-radio' type='radio' name='type' ng-focus="category(2)" />
+                <label>Entertainment</label>
+                <input class='w3-radio' type='radio' name='type' ng-focus="category(3)" />
+                <label>Gossips</label>
+                <input class='w3-radio' type='radio' name='type' ng-focus="category(4)" />
+                <label>Events/Shows</label>
+                <input class='w3-radio' type='radio' name='type' ng-focus="category(5)" />
+                <label>Health</label>
+                <input class='w3-radio' type='radio' name='type' ng-focus="category(6)" />
+                <label>Opinion</label>
+                <input class='w3-radio' type='radio' name='type' ng-focus="category(8)" />
+                <label>Scholarship</label>
+                <input class='w3-radio' type='radio' name='type' ng-focus="category(7)" />
+                <label>Others</label>
+                <br />
+                <br />
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Choose school <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li ng-repeat="school in schools"><a ng-click="schoo(school)">{{school.name}}</a></li>
+                        </ul>
+                    </div>
+                    <input type="text" class="form-control w3-disabled" placeholder="select school" style="max-width:400px" ng-model="mysch.name">
+                </div>
+                <br />
+                <br />
+                <button class='btn btn-success btn-lg' ng-click='submit()'>submit</button>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+
+            </form>
+
+        </div>
+    </div>
 </div>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">

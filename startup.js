@@ -38,22 +38,15 @@ res.sendFile('C:\\Users\\valike23\\Desktop\\new website\\news.html');
 app.get('/login',function(req,res){
 res.sendFile('C:\\Users\\valike23\\Desktop\\new website\\login.html');
 });
-// to registration page
-app.get('/register',function(req,res){
-res.sendFile('C:\\Users\\valike23\\Desktop\\new website\\register.html');
-});
+
 app.get('/author',function(req,res){
 res.sendFile('C:\\Users\\valike23\\Desktop\\new website\\dashboard.html');
 });
 app.get('/cbt',function(req,res){
 res.sendFile('C:\\Users\\valike23\\Desktop\\new website\\CBT.html');
 });
-app.get('/allnews',function(req,res){
-res.sendFile('C:\\Users\\valike23\\Desktop\\new website\\allnews.html');
-});
-app.get('/admin',function(req,res){
-res.sendFile('C:\\Users\\valike23\\Desktop\\new website\\allnews.html');
-});
+
+
 
 app.use(function(req,res){
 	console.log('request ip ' + req.ip)

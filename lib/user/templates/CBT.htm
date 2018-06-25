@@ -1,33 +1,46 @@
 <div class='container center' ng-controller='cbtCtrl'>
-<div class='row'>
-<div class='btn-group well well-sm' >
-<button class='btn btn-sm btn-warning'ng-click='set(question)'ng-repeat='question in questions'>{{question.id}}</p>
-</div>
 
-</div>
-<div class='well well-lg container'
-<div class='row'>
-<div class='col-xs-12 '>
-<p>{{data.subject}}</p>
-</div>
+    <nav>
+        <ul class="pagination">
 
-<div class='row'>
-<div class='col-xs-12'>
-<p class='text-capitalize'>{{data.quiz}}</p>
-</div>
-</div>
-<div class='row '>
-<div class='col-xs-6 ' ng-repeat='option in data.options'>
-<p class='well well-sm well-rounded' ng-click='fix(option)' style='background-color:{{option.color}} ; 
-color:'white'''>{{option.name}}</p>
-</div>
-</div>
-</div>
+            <li ng-repeat='question in questions' ng-click='set(question, $index)'>
+                <a ng-hide="question.choosen" class="w3-red">{{$index + 1}}</a>
+                <a ng-show="question.choosen" class="w3-blue-gray">{{$index + 1}}</a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <div class='well well-lg container'>
+        <div class='row'>
+            <div class='col-xs-12 '>
+                <p>{{data.subject}}</p>
+            </div>
+
+            <div class='row'>
+                <div class='col-xs-12'>
+                    <p class='text-capitalize'>{{data.quiz}}</p>
+                </div>
+            </div>
+            <div class='row '>
+                <div class='col-xs-6 ' ng-repeat='option in data.options'>
+                    <p class='well well-sm well-rounded' ng-click='fix(option)' style='background-color:{{option.color}} ;
+color:' white'''>{{option.name}}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <nav>
+        <ul class="pager">
+            <li class="previous"><a ng-click="prev()"><span aria-hidden="true">&larr;</span>Previous</a></li>
+            <li class="next"><a ng-click="next()">Next <span aria-hidden="true">&rarr;</span></a></li>
+        </ul>
+    </nav>
 <br/>
 <br/>
-<button class='btn btn-lg btn-success' ng-click='submit()'>submit</button>
+<button class='btn btn-lg w3-green' ng-click='submit()'>submit</button>
 
-</div>
 
 
 

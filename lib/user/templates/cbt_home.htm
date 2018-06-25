@@ -1,79 +1,35 @@
-<div class='container-fluid' ng-controller='chCbtCtrl'>
-    <div class='row'ng-hide = sel>
-        <div class='container-fluid'>
-            <div class='jumbotron'>
-               <div class='container'>
-                   <div class='page-header text-center'>
-                       <h1>choose exam</h1>
-                   </div>
-                   <p>click any exam you do like to try your brains on...</p>
-               </div>
-            </div>
-            <div class='row'>
-                    <div class='col-sm-3'>
-    
-                        <div class='well well-sm'style='background-color:red' >
-                            <div class='row'>
-                                <div class='col-xs-4'>
-                                    <i class='fa fa-university fa-5x' style='width:100%'>
-                                        
-                                    </i>
-                                </div>
-    
-                                <div class='col-xs-8 '>
-                                    <p class='h4'>WAEC (MAY/NOV) </p>
-                                    <button class='btn pull-right btn-primary' ng-click="waec()">click me</button>
-                                </div>
-                            </div>
-    
-                        </div>
-    
-                    </div>
-    
-                    <div class='col-sm-3'>
-                        <div class='well well-sm'style='background-color:lightBlue'>
-                            <div class='row'>
-                                <div class='col-xs-4'>
-                                    <i class='fa fa-graduation-cap fa-5x' style='width:100%'></i>
-                                </div>
-                                <div class='col-xs-8'>
-                                    <p class='h4'>JAMB </p>
-                                    <button class='btn pull-right btn-primary' ng-click="jamb()">click me</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='col-sm-3  '>
-                        <div class='well well-sm  'style='background-color:lightGreen'>
-                            <div class='row'>
-                                <div class='col-xs-4'>
-                                    <i class='fa fa-book fa-5x' style='width:100%'></i>
-                                </div>
-                                <div class='col-xs-8'>
-                                    <p class='h4'>post-UTME</p>
-                                    <button class='btn pull-right btn-primary' ng-click="postutme()">click me</button>
-                                </div>
-                            </div>
-    
-                        </div>
-                    </div>
-                    <div class='col-sm-3'>
-                            <div class='well well-sm'style='background-color:lightGreen'>
-                                <div class='row'>
-                                    <div class='col-xs-4'>
-                                        <i class='fa fa-book fa-5x' style='width:100%'></i>
-                                    </div>
-                                    <div class='col-xs-8'>
-                                        <p class='h4'>others</p>
-                                        <button class='btn pull-right btn-primary'>click me</button>
-                                    </div>
-                                </div>
-        
-                            </div>
-                        </div>
-                </div>
-            </div>
-   
-  
 
+<div class="container" ng-controller="chCbtCtrl">
+    <div class="row" style="box-shadow:2px; margin-bottom:5px; margin-top:5px;">
+        <div class="col-sm-6" style=" margin-left:-12px">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="search your favorite exams by school bases..." >
+                <span class="input-group-addon btn w3-blue"><i class="fa fa-search"></i></span>
+
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="search your favorite exams by subject bases...">
+                <span class="input-group-addon btn w3-green"><i class="fa fa-search"></i></span>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:8px">
+        <div class="col-md-3 col-sm-5 col-xs-11 w3-card  btn " ng-repeat="subject in subjects" style="margin:3px; text-align:left" ng-click="choose(subject)">
+            <div class="row ">
+
+                <p class="col-xs-8">{{subject.abbrv}} </p><span class="col-xs-4">{{subject.sabbrv}}</span>
+            </div>
+            <div class="row">
+                <p class="col-xs-12">{{subject.sub}}</p>
+            </div>
+                   
+       
+
+            
+        </div>
+    </div>
 </div>

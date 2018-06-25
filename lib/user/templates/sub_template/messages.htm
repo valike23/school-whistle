@@ -3,12 +3,12 @@
     <div class="col-md-4 compose-left">
         <div class="folder w3-card-4 widget-shadow">
             <ul>
+                <!-- after understanding ng-class we can add active class to the active tab among the below -->
                 <li class="head"><i class="fa fa-folder" aria-hidden="true"></i>Folders</li>
-                <li class="active-box" style=" "><a ui-sref="mail.inbox"><i class="fa fa-inbox "></i>Inbox <span>52</span></a></li>
+                <li ><a ui-sref="mail.inbox"><i class="fa fa-inbox "></i>Inbox <span>52</span></a></li>
                 <li><a href="#"><i class="fa fa fa-envelope-o"></i>Sent </a></li>
                 <li><a href="#"><i class="fa fa-file-text-o"></i>Drafts <span>03</span></a> </li>
-                <li><a href="#"><i class="fa fa-flag-o"></i>Spam </a></li>
-                <li><a href="#"><i class="fa fa-trash-o"></i>Trash</a></li>
+                <li><a ui-sref="mail.send"><i class="fa fa-mail-reply"></i>compose</a></li>
             </ul>
         </div>
         <div class="chat-grid widget-shadow w3-card-4">

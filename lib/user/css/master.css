@@ -91,3 +91,13 @@
 	max-width: 200px;
 	padding: 40px;
 }
+#news
+{
+    font-size:14px;
+    font-family:Gadugi
+}
+.leftPadding{
+   padding-right: -30px;
+   margin-right: -40px
+ 
+}

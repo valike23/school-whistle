@@ -4,7 +4,8 @@
   "description": "A one place stop for all your school solution- From  school news to exam pakages to CBT test and exam preparation classes.",
   "main": "startup.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":  "node startup.js"
   },
   "keywords": [
     "news",

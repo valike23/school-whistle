@@ -75,21 +75,19 @@
 				<br/>
 				<div class='row'>
 					<div class='col-md-9'>
-						<img ng-src={{news.image}} class='img-responsive rounded' width="700" height="200" />
+						<img ng-src={{news.image}} class='img-responsive rounded' style="min-height:100px; width:83%; max-height:500px" />
 						<br/>
-						<p><strong><i>Valentine Emmanuel</i></strong></p>
+						<p><strong><i>{{news.author}}</i></strong></p>
 						<br/>
-						<p ng-repeat = 'cont in content' style="text-align: justify;">
-						{{cont}}
-						</p>
-						<br/>
+                        <!-- the use content -->
                         <div id="newsBody"></div>
-						<p><strong>Contact us:</strong> 08175420053 </p>
+                        <!-- End of news content -->
+						<p><strong>Contact me:</strong><a ui-sref="#"  ng-click="contact(news.authorUsername)"  data-toggle="tooltip" data-placement="left" title="" data-original-title="Tooltip on left">  @{{news.authorUsername}} </a></p>
 						<br/>
 						<br/>
 						
 					</div>
-                    <div class='col-md-3'>
+                    <div class='col-md-3 col-sm-9'>
                         <p class='row w3-dark-grey w3-card-2' style="margin-left:-10px">
                             Related news
                         </p>
@@ -98,7 +96,7 @@
                                 <li class='w3-bar col-xs-12 w3-border-bottom ' ng-repeat='mnews in related'>
                                     <div class='row w3-button' ng-click='currentNews(mnews)'>
                                         <div class='col-xs-3 bar-item'>
-                                            <img ng-src={{mnews.image}} class='img-responsive img-circle' />
+                                            <img ng-src={{mnews.image}} class='img-responsive img-circle'   />
                                         </div>
                                         <div class='col-xs-9 bar-item'>
                                             <p class='w3-small'><b>{{mnews.title}}</b></p>
